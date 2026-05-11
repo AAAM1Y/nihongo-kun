@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 敏感信息（密钥、密码）
+.env
+
+# 导入/导出脚本（含本机 Supabase 密钥）
+scripts/import-apkg.cjs
+scripts/export-csv.cjs
+scripts/build-local-data.cjs
+scripts/import-words.cjs
+scripts/generate-questions.cjs
+
+# 题库文件（版权 + 体积）
+*.apkg
+collection.anki21
+question-csv/
+data/
+public/local/questions.json
