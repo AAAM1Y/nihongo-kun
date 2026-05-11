@@ -1,10 +1,9 @@
-import { updateSRS, getDueReviewIds, getMasteredIds } from "@/lib/srs"
+import { updateSRS, getDueReviewIds } from "@/lib/srs"
 import { useState, useEffect, useCallback, useRef } from "react"
 import { useQuizStore } from "@/hooks/useQuizStore"
 import { supabase } from "@/lib/supabase"
 import type { Question } from "@/types/question"
 import { getCount, fetchQuestions } from "@/lib/dataAdapter"
-import type { VocabRow } from "@/lib/dataAdapter"
 import { mockAnalyze, type AnalysisReport } from "@/lib/mockAnalysis"
 import { saveRecord, buildRecord } from "@/lib/history"
 import { useBrowse } from "@/hooks/useBrowse"
@@ -286,7 +285,6 @@ export default function QuizApp() {
         correctCount={overallCorrect} answeredCount={overallTotal}
         wrongAnswersCount={wrongAnswers.length}
         report={report} isAnalyzing={isAnalyzing}
-        wrongAnswers={wrongAnswers} questions={questions}
         onAnalyze={handleAnalyze} onReset={handleReset}
       />
     )

@@ -123,7 +123,7 @@ export default function StartScreen(props: Props) {
         <div className="flex gap-1">
           <Button variant="outline" size="sm" onClick={onOpenHistory}>学习记录</Button>
           <DataToggle />
-          <Button variant={verticalLayout ? "ghost" : "outline"} size="sm" onClick={() => setVerticalLayout(v => !v)}>
+          <Button variant={verticalLayout ? "ghost" : "outline"} size="sm" onClick={() => setVerticalLayout(!verticalLayout)}>
             {verticalLayout ? "横排" : "竖排"}
           </Button>
         </div>

@@ -82,7 +82,6 @@ export default function Dashboard() {
       const lines = text.split("\n").filter(l => l.trim())
       if (lines.length < 2) { setImportMsg("CSV 至少需要一行表头 + 一行数据"); setImporting(false); return }
 
-      const header = lines[0].split(",").map(h => h.trim())
       const rows = lines.slice(1).map(line => {
         const cols = parseCSVLine(line)
         if (cols.length < 7) return null

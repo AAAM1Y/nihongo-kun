@@ -25,7 +25,7 @@ export async function fetchAllVocab(opts: QueryOpts): Promise<VocabRow[]> {
 function toVocabRow(row: Record<string, unknown> | Question): VocabRow {
   return {
     word: extractWord(row.question as string),
-    reading: (row.options as string[])[row.correct_index as number],
+    reading: (row.options as string[])[(row as Record<string, unknown>).correct_index as number ?? (row as Question).correctIndex],
     definition: extractDefinition(row.explanation as string),
     level: row.level as string,
     frequency: (row.frequency as string) || null,

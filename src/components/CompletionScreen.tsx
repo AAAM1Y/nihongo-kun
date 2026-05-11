@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Loader2 } from "lucide-react"
 import type { AnalysisReport } from "@/lib/mockAnalysis"
-import type { Question } from "@/types/question"
 
 interface Props {
   totalRounds: number
@@ -12,15 +11,13 @@ interface Props {
   wrongAnswersCount: number
   report: AnalysisReport | null
   isAnalyzing: boolean
-  wrongAnswers: { questionId: number; selectedIndex: number; isCorrect: boolean }[]
-  questions: Question[]
   onAnalyze: () => void
   onReset: () => void
 }
 
 export default function CompletionScreen({
   totalRounds, roundHistory, correctCount, answeredCount,
-  wrongAnswersCount, report, isAnalyzing, wrongAnswers, questions, onAnalyze, onReset
+  wrongAnswersCount, report, isAnalyzing, onAnalyze, onReset
 }: Props) {
   const accuracy = answeredCount > 0 ? Math.round((correctCount / answeredCount) * 100) : 0
 
