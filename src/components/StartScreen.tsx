@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import BrowseTable from "@/components/BrowseTable"
 import DataToggle from "@/components/DataToggle"
+import StudyStats from "@/components/StudyStats"
 import { Loader2 } from "lucide-react"
 import type { AppMode, Category, CountOption } from "@/types/question"
 import type { VocabRow } from "@/lib/dataAdapter"
@@ -128,6 +129,8 @@ export default function StartScreen(props: Props) {
           </Button>
         </div>
       </div>
+
+      <StudyStats />
 
       {/* 模式选择 */}
       <div className="flex gap-1">
